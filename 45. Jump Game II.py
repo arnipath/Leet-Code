@@ -1,0 +1,11 @@
+#45 Jump Game II
+def jump(self, nums: List[int]) -> int:
+        farthest = 0
+        jump = 0
+        current_end = 0
+        for i in range(len(nums)-1):
+            farthest = max(farthest, i + nums[i])
+            if i == current_end:
+                jump += 1
+                current_end = farthest
+        return jump
